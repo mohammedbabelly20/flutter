@@ -1,0 +1,6 @@
+workflows:  
+  default-instance-workflow:
+    name: Default Instance Workflow  
+    max_build_duration: 120
+    scripts:
+      - echo "Hello there!"              
