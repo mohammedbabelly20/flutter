@@ -3,4 +3,10 @@ workflows:
     name: Default Instance Workflow  
     max_build_duration: 120
     scripts:
-      - echo "Hello there!"              
+      - | 
+        for ($i = 1; $i -le 20; $i++) {
+          git clone "git@github.com:mohammedbabelly20/flutter.git" "test"
+          Write-Host "Iteration: $($i) - Folder created and repository cloned."
+          Remove-Item -Path "test/*" -Recurse -Force
+        }
+        Write-Host "All iterations completed."        
